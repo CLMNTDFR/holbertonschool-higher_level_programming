@@ -1,31 +1,30 @@
-# <p align="center">Python - if/else, loops, functions</p>
+# <p align="center">Python - Hello, World</p>
   
 ## Resources
 
-- More Control Flow Tools (Read until “4.6. Defining Functions” included)
-- IndentationError
+- Use this playlist as long as you are learning Python:
+
+- Learn to Program
+
+- Whetting Your Appetite
+
+- Using the Python Interpreter
+
+- An Informal Introduction to Python (Read up until “3.1.2. Strings” included)
+
 - How To Use String Formatters in Python 3
-- Learn to Program 2 : Looping
+
 - Pycodestyle – Style Guide for Python Code
 
 ## Learning Objectives
 At the end of this project, you are expected to be able to explain to anyone, without the help of Google:
 
 ### General
-- Why indentation is so important in `Python`
-- How to use the` if, if ... else `statements
-- How to use comments
-- How to affect values to variables
-- How to use the `while` and for loops
-- How to use the `break` and continues statements
-- How to use `else `clauses on loops
-- What does the pass statement `do`, and when to use it
-- How to use `range`
-- What is a function and how do you use functions
-- What does return a function that does not use any return statement
-- Scope of variables
-- What’s a traceback
-- What are the arithmetic operators and how to use them<br>
+How to use the Python interpreter<br>
+How to print text and variables using print<br>
+How to use strings<br>
+What are indexing and slicing in Python<br>
+What is the official Python coding style and how to check your code with pycodestyle<br><br>
 ### Requirements
 Python Scripts<br>
 Allowed editors: `vi`, `vim`, `emacs`<br>
