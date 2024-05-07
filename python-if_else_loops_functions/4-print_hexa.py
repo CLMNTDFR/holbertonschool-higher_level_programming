@@ -1,3 +1,3 @@
 #!/usr/bin/python3
-for number in range(0, 99):
-    print(f"{number} = {hex(number)}")  # hex() convert number to hexadecimal
+for index in range(0, 99):
+    print("{} = {}".format(index, hex(index)))  # hex() convert number to hexadecimal
