@@ -1,14 +1,12 @@
 #!/usr/bin/python3
 
 def multiple_returns(sentence):
-    #  if sentence is not empty:
-    if sentence:
-        length = len(sentence)
-        first = sentence[0]
+    length = len(sentence)
 
-    #  if sentence is empty
-    else:
-        lenght = 0
+    if length == 0:
         first = None
+
+    else:
+        first = sentence[0]
 
     return (length, first)
