@@ -5,13 +5,13 @@ def best_score(a_dictionary):
     if not a_dictionary:
         return None
 
-    max_key = None
-    max_item = -int('inf')
+    best_key = None
+    best_item = -int('inf')
     #  initialize value with negative infinite integer
 
     for key, item in a_dictionary.items():
-        if item > max_item:
-            max_item = item
-            max_key = key
+        if item > best_item:
+            best_item = item
+            best_key = key
 
-    return max_key
+    return best_key
