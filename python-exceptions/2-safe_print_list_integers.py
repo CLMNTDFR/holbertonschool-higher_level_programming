@@ -6,13 +6,18 @@ def safe_print_list_integers(my_list=[], x=0):
 
     for i in range(x):
         try:
-            print("{:d}".format(my_list), end="")
-            nb_printed += 1
+            #  Check if the element is an integer before printing
+            if isinstance(my_list[i], int):
+                print("{:d}".format(my_list[i]), end="")
+                nb_printed += 1
 
         except IndexError:
-            break  # Exit the loop if loop is out of range
+            # Exit the loop if index is out of range
+            break
 
-        except ValueError:
+        except (TypeError, ValueError):
+            #  Skip in silence if Type isn't an integer or
+            #  if value is incorrect
             continue
 
     print()  # Print a new line
