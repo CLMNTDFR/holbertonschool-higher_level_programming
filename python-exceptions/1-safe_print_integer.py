@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 
+
 def safe_print_integer(value):
     #  Try to print an integer and return 'True' if operation is successful
     try:
