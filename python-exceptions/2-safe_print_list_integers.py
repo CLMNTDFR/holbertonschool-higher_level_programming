@@ -13,12 +13,12 @@ def safe_print_list_integers(my_list=[], x=0):
 
         except IndexError:
             # Exit the loop if index is out of range
-            break
+            pass
 
         except (TypeError, ValueError):
             #  Skip in silence if Type isn't an integer or
             #  if value is incorrect
-            continue
+            pass
 
     print()  # Print a new line
     return nb_printed
