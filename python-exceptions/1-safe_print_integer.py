@@ -9,7 +9,8 @@ def safe_print_integer(value):
         value (any): The value to be printed as an integer.
 
     Returns:
-        bool: True if the value was successfully printed as an integer, otherwise False.
+        bool: True if the value was successfully printed as an integer,
+        otherwise False.
     """
     try:
         # Try to format and print the value as an integer
@@ -20,5 +21,6 @@ def safe_print_integer(value):
         # Handle the case where the value cannot be formatted as an integer
         return False
     except TypeError:
-        # Handle the case where the type of the value is not suitable for integer formatting
+        # Handle the case where the type of the value is not suitable for
+        #  integer formatting
         return False
