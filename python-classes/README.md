@@ -44,6 +44,10 @@ A `README.md` file, at the root of the folder of this project, is mandatory<br>
 Your code should use the `pycodestyle (version 2.7.*)`<br>
 All your files must be executable<br>
 The length of your files will be tested using `wc`<br>
+All your modules should have a documentation (`python3 -c 'print(__import__("my_module").__doc__)'`)<br>
+All your classes should have a documentation 0`(python3 -c 'print(__import__("my_module").MyClass.__doc__'`)<br>
+All your functions (inside and outside a class) should have a documentation (`python3 -c 'print(__import__("my_module").my_function.__doc__)'` and `python3 -c 'print(__import__("my_module").MyClass.my_function.__doc__)'`)<br>
+A documentation is not a simple word, it’s a real sentence explaining what’s the purpose of the module, class or method (the length of it will be verified)<br>
 <br>
 ### More Info
 **Documentation is now mandatory!** Each module, class, and method must contain docstring as comments. *Example Google Style Python Docstrings*
