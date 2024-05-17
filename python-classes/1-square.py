@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-0-square.py
+1-square.py
 
 This module initializes a class called 'Square' who
 contains a private instance attribute: 'size'.
