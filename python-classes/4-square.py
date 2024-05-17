@@ -25,14 +25,14 @@ class Square:
             ValueError: If size is less than 0.
         """
         self.__size = size
-    
+
         @property
         def size(self):
             return self.__size
-        
+
         @size.setter
         def size(self, value):
-        
+
             if not isinstance(size, int):
                 raise TypeError("size must be an integer")
 
