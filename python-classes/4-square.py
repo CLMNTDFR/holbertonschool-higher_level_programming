@@ -17,12 +17,15 @@ class Square:
         Initialize a private instance attribute: 'size'.
 
         Args:
-            __size (int): The size of a square.
+            __size (int): The size of a square
+            Defaults to 0.
 
         Raises:
             TypeError: The size is not an integer.
             ValueError: If size is less than 0.
         """
+        self.__size = size
+    
         @property
         def size(self):
             return self.__size
@@ -35,8 +38,6 @@ class Square:
 
             if size < 0:
                 raise ValueError("size must be >= 0")
-
-                self.__size = size
 
     def area(self):
         """
