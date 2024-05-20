@@ -91,6 +91,3 @@ class TestMaxInteger(unittest.TestCase):
     def test_mixed_list(self):
         with self.assertRaises(TypeError):
             max_integer([1, 2, "three", 4])
-
-if __name__ == '__main__':
-    unittest.main()
