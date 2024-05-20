@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 """
+
 Module composed by a function that prints 2 new lines after ".?:" characters
+
 """
 
 
@@ -15,21 +17,20 @@ def text_indentation(text):
 
     Raises:
         TypeError: If text is not a string
+
+
     """
 
-    if not isinstance(text, str):
+    if type(text) is not str:
         raise TypeError("text must be a string")
 
-    # Initial empty string to accumulate the result
-    result = ""
+    s = text[:]
 
-    # Iterate through each character in the input text
-    for char in text:
-        # Add the character to the result
-        result += char
-        # If the character is one of the specified punctuation marks, add two new lines
-        if char in ".?:":
-            result += "\n\n"
+    for d in ".?:":
+        list_text = s.split(d)
+        s = ""
+        for i in list_text:
+            i = i.strip(" ")
+            s = i + d if s is "" else s + "\n\n" + i + d
 
-    # Print the result, with leading/trailing spaces removed from each line
-    print("\n".join([line.strip() for line in result.split("\n")]))
+    print(s[:-3], end="")
