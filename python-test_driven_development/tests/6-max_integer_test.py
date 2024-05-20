@@ -2,8 +2,7 @@
 """Unittest for max_integer([..])
 """
 import unittest
-
-max_integer = __import__("6-max_integer").max_integer
+max_integer = __import__('6-max_integer').max_integer
 
 
 class TestMaxInteger(unittest.TestCase):
@@ -18,7 +17,7 @@ class TestMaxInteger(unittest.TestCase):
     def test_repeated_number(self):
         self.assertEqual(max_integer([1000, 1000, 1000]), 1000)
 
-    def test_float_number(self):
+    def test_float_numbers(self):
         self.assertEqual(max_integer([50, 51, 50, 49]), 51)
 
     def test_max_operated_integer(self):
@@ -34,52 +33,11 @@ class TestMaxInteger(unittest.TestCase):
         self.assertEqual(max_integer([0, 0]), 0)
 
     def test_big_list(self):
-        self.assertEqual(
-            max_integer(
-                [
-                    901,
-                    902,
-                    903,
-                    904,
-                    905,
-                    906,
-                    907,
-                    908,
-                    909,
-                    910,
-                    911,
-                    912,
-                    913,
-                    914,
-                    915,
-                    916,
-                    917,
-                    918,
-                    919,
-                    920,
-                    919,
-                    918,
-                    917,
-                    1000,
-                    915,
-                    914,
-                    913,
-                    912,
-                    911,
-                    910,
-                    909,
-                    908,
-                    907,
-                    906,
-                    905,
-                    904,
-                    903,
-                    902,
-                    901,
-                ]
-            ),
-            1000,
-        )
+        self.assertEqual(max_integer([
+            901, 902, 903, 904, 905, 906, 907, 908, 909, 910,
+            911, 912, 913, 914, 915, 916, 917, 918, 919, 920,
+            919, 918, 917, 1000, 915, 914, 913, 912, 911, 910,
+            909, 908, 907, 906, 905, 904, 903, 902, 901]), 1000)
 
     def test_list_with_loop(self):
         my_list = [1, 2, 3, 4, 5]
@@ -88,9 +46,9 @@ class TestMaxInteger(unittest.TestCase):
     def test_one_number_in_a_list(self):
         self.assertEqual(max_integer([1]), 1)
 
-    def test_string_number_in_list(self):
+    def test_string_number_in_a_list(self):
         with self.assertRaises(TypeError):
-            max_integer([0, "1"])
+            max_integer([0, '1'])
 
     def test_tuple_in_a_list(self):
         with self.assertRaises(TypeError):
@@ -98,13 +56,18 @@ class TestMaxInteger(unittest.TestCase):
 
     def test_dictionary(self):
         with self.assertRaises(KeyError):
-            max_integer({"key1": 1, "key2": 2})
+            max_integer({'key1': 1, 'key2': 2})
 
     def test_number(self):
         with self.assertRaises(TypeError):
             max_integer(1)
 
+    # Additional tests not covered in previous unittest
     def test_none_in_list(self):
+        with self.assertRaises(TypeError):
+            max_integer([None, 1, 2])
+
+    def test_bool_in_list(self):
         with self.assertRaises(TypeError):
             max_integer([True, False, 1, 0])
 
@@ -129,6 +92,5 @@ class TestMaxInteger(unittest.TestCase):
         with self.assertRaises(TypeError):
             max_integer([1, 2, "three", 4])
 
-
-if __name__ == "__main__":
+if __name__ == '__main__':
     unittest.main()
