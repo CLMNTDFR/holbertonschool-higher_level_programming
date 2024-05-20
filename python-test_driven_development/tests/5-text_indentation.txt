@@ -1,0 +1,58 @@
+The ``5-text_indentation`` module
+=================================
+
+Using ``text_indentation``
+--------------------------
+
+Importing the function from the module:
+
+    >>> text_indentation = __import__('5-text_indentation').text_indentation
+
+Passing None as the text:
+
+    >>> text_indentation(None)
+    Traceback (most recent call last):
+        ...
+    TypeError: text must be a string
+
+Passing an integer as the text:
+
+    >>> text_indentation(123)
+    Traceback (most recent call last):
+        ...
+    TypeError: text must be a string
+
+Passing a list as the text:
+
+    >>> text_indentation(["Hello", "World"])
+    Traceback (most recent call last):
+        ...
+    TypeError: text must be a string
+
+Passing a tuple as the text:
+
+    >>> text_indentation(("Hello", "World"))
+    Traceback (most recent call last):
+        ...
+    TypeError: text must be a string
+
+Passing a dictionary as the text:
+
+    >>> text_indentation({"key": "value"})
+    Traceback (most recent call last):
+        ...
+    TypeError: text must be a string
+
+Passing a boolean as the text:
+
+    >>> text_indentation(True)
+    Traceback (most recent call last):
+        ...
+    TypeError: text must be a string
+
+Missing argument:
+
+    >>> text_indentation()
+    Traceback (most recent call last):
+        ...
+    TypeError: text_indentation() missing 1 required positional argument: 'text'
