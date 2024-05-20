@@ -1,0 +1,51 @@
+# tests/0-add_integer.txt
+
+>>> from 0-add_integer import add_integer
+
+# Test 1: Addition of two positive integers
+>>> add_integer(1, 2)
+3
+
+# Test 2: Addition of a positive integer and a negative integer
+>>> add_integer(100, -2)
+98
+
+# Test 3: Addition with default value for b
+>>> add_integer(2)
+100
+
+# Test 4: Addition of a float and an integer
+>>> add_integer(100.3, -2)
+98
+
+# Test 5: Addition of two floats
+>>> add_integer(2.5, 3.7)
+5
+
+# Test 6: Addition of a float and a default integer
+>>> add_integer(1.2)
+99
+
+# Test 7: Error when b is a string
+>>> add_integer(4, "School")
+Traceback (most recent call last):
+    ...
+TypeError: b must be an integer
+
+# Test 8: Error when a is None
+>>> add_integer(None)
+Traceback (most recent call last):
+    ...
+TypeError: a must be an integer
+
+# Test 9: Error when a is a list
+>>> add_integer([1, 2], 3)
+Traceback (most recent call last):
+    ...
+TypeError: a must be an integer
+
+# Test 10: Error when b is a dict
+>>> add_integer(1, {"b": 2})
+Traceback (most recent call last):
+    ...
+TypeError: b must be an integer
