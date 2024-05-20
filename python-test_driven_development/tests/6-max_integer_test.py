@@ -106,7 +106,7 @@ class TestMaxInteger(unittest.TestCase):
         test_list = [1, 2, 3, 4, "2"]
         with self.assertRaises(TypeError):
             max_integer(test_list)
-*
+
     def test_string_numbers(self):
         """
         Test for passing a string of numbers in list
