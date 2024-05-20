@@ -4,6 +4,10 @@ The ``4-print_square`` module
 Using ``print_square``
 ----------------------
 
+Importing function from the module:
+
+    >>> print_square = __import__('4-print_square').print_square
+
 Printing a 4x4 square:
 
     >>> print_square(4)
