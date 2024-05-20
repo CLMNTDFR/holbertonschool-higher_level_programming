@@ -63,3 +63,52 @@ Testing with a string as size:
     Traceback (most recent call last):
         ...
     TypeError: size must be an integer
+
+Passing None as the size of the square:
+
+    >>> print_square(None)
+    Traceback (most recent call last):
+        ...
+    TypeError: size must be an integer
+
+Missing argument:
+
+    >>> print_square()
+    Traceback (most recent call last):
+        ...
+    TypeError: print_square() missing 1 required positional argument: 'size'
+
+Testing with a list as size:
+
+    >>> print_square([4])
+    Traceback (most recent call last):
+        ...
+    TypeError: size must be an integer
+
+Testing with a dictionary as size:
+
+    >>> print_square({'size': 4})
+    Traceback (most recent call last):
+        ...
+    TypeError: size must be an integer
+
+Testing with a tuple as size:
+
+    >>> print_square((4,))
+    Traceback (most recent call last):
+        ...
+    TypeError: size must be an integer
+
+Testing with a boolean as size:
+
+    >>> print_square(True)
+    Traceback (most recent call last):
+        ...
+    TypeError: size must be an integer
+
+Testing with a set as size:
+
+    >>> print_square({4})
+    Traceback (most recent call last):
+        ...
+    TypeError: size must be an integer
