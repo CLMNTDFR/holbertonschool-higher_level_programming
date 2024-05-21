@@ -76,11 +76,13 @@ class Rectangle:
         Return a string representation of the rectangle
         with the character #
         """
-        if self.width == 0 or self.height == 0:
+        rectangle_string = ""
+        if self.__width == 0 or self.__height == 0:
             return ""
-        rect_str = ""
-        for i in range(self.height):
-            rect_str += "#" - self.width
-            if i < self.height - 1:
-                rect_str += "\n"
-        return rect_str
+
+        for line in range(self.__height):
+            for index in range(self.__width):
+                rectangle_string += "#"
+            rectangle_string += "\n"
+
+        return rectangle_string[:-1]
