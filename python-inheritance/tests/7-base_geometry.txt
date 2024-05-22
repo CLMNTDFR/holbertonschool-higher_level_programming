@@ -1,0 +1,39 @@
+>>> from 7-base_geometry import BaseGeometry
+
+>>> bg = BaseGeometry()
+
+# Test the area method
+>>> bg.area()
+Traceback (most recent call last):
+    ...
+Exception: area() is not implemented
+
+# Test the integer_validator method with valid integer
+>>> bg.integer_validator("age", 5)
+
+# Test the integer_validator method with non-integer
+>>> bg.integer_validator("name", "John")
+Traceback (most recent call last):
+    ...
+TypeError: name must be an integer
+
+# Test the integer_validator method with zero
+>>> bg.integer_validator("age", 0)
+Traceback (most recent call last):
+    ...
+ValueError: age must be greater than 0
+
+# Test the integer_validator method with negative integer
+>>> bg.integer_validator("distance", -4)
+Traceback (most recent call last):
+    ...
+ValueError: distance must be greater than 0
+
+# Test the integer_validator method with another valid integer
+>>> bg.integer_validator("width", 10)
+
+# Test the integer_validator method with zero
+>>> bg.integer_validator("width", 0)
+Traceback (most recent call last):
+    ...
+ValueError: width must be greater than 0
