@@ -23,15 +23,13 @@ class Square(Rectangle):
         Args:
             size (int): The size of the square.
         """
-        # Assign the values to private attributes
+        super().integer_validator("size", size)
+        super().__init__(size, size)
         self.__size = size
-
-        # Validate the assigned values using the integer_validator method
-        self.integer_validator("size", self.__size)
 
     def area(self):
         """
         Public instance method: def area(self):
         that returns the current rectangle area.
         """
-        return self.__size**2
+        return super().area()
