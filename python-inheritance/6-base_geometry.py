@@ -10,6 +10,7 @@ class BaseGeometry:
     """
     The 'BaseGeometry' class.
     """
+    pass
 
 
 def area(self):
