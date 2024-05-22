@@ -17,7 +17,6 @@ class BaseGeometry:
         """initialize class"""
         pass
 
-
     def area(self):
         """
         Public instance method: def area(self):
