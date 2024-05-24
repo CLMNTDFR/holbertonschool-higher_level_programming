@@ -1,4 +1,4 @@
-# <p align="center">Python - Inheritance</p>
+# <p align="center">Python - Abstract Classes and Interfaces</p>
   
 ## Resources
 
