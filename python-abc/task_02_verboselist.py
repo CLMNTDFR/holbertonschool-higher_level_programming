@@ -8,11 +8,19 @@ class VerboseList(list):
         print("Extended the list with [{}] items.".format(len(iterable)))
 
     def remove(self, item):
-        print("Removed [{}] from the list.".format(item))
-        super().remove(item)
+        if item in self:
+            print("Removed [{}] from the list.".format(item))
+            super().remove(item)
+        else:
+            print(
+                "Attempted to remove [{}], but it was not found in the list."
+                .format(item))
 
     def pop(self, index=-1):
-        # If no index is specified, default is the last element of the list
-        item = self[index]
-        print("Popped [{}] from the list.".format(item))
-        super().pop(index)
+        try:
+            item = self[index]
+            super().pop(index)
+            print("Popped [{}] from the list.".format(item))
+        except IndexError:
+            print("Attempted to pop index [{}], but it was out of range."
+                  .format(index))
