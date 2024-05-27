@@ -17,5 +17,6 @@ def class_to_json(obj):
     Returns:
         dict: A dictionary containing the attributes of obj.
     """
+    # vars() returns an attributes's dictionnary of an object
     json_obj = vars(obj)
     return json_obj
