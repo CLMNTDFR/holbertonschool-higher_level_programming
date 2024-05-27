@@ -11,6 +11,6 @@ def read_file(filename=""):
     The function reads the content of the file and prints it to the standard output.
     It uses the with statement to ensure the file is properly closed after reading.
     """
-    with open(filename, 'r', encoding="utf-8") as f:
-        content = f.read()
-        print(content, end="")
+    with open(filename, mode="r", encoding="utf-8") as f:
+        for line in f:
+            print(line, end="")
