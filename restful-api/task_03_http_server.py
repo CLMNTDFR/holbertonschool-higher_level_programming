@@ -9,6 +9,7 @@ relying on third-party libraries.
 
 import http.server
 import json
+from http.server import BaseHTTPRequestHandler, HTTPServer
 
 
 class SimpleHTTPRequestHandler(http.server.BaseHTTPRequestHandler):
@@ -43,13 +44,9 @@ class SimpleHTTPRequestHandler(http.server.BaseHTTPRequestHandler):
             self.send_error(404, "Endpoint not found")
 
 
-def start_server():
-    """Start the HTTP server."""
-    server_address = ("", 8000)
-    httpd = http.server.HTTPServer(server_address, SimpleHTTPRequestHandler)
-    print("Serveur démarré sur le port 8000...")
+if __name__ == '__main__':
+    port = 8000
+    server_address = ('', port)
+    httpd = HTTPServer(server_address, SimpleHTTPRequestHandler)
+    print(f'Starting httpd server on port {port}')
     httpd.serve_forever()
-
-
-if __name__ == "__main__":
-    start_server()
