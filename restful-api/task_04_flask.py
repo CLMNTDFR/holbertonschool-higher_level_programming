@@ -86,26 +86,18 @@ def get_user(username):
 
 @app.route('/add_user', methods=['POST'])
 def add_user():
-    #   Parse the incoming JSON data
     user_data = request.get_json()
-    #   Extract the username from the data
-    username = user_data['username']
-    #   Check if the username already exists
+    username = user_data.get('username')
+    if not username:
+        return jsonify({"error": "Username is required"}), 400
     if username in users:
-        #   If user exists, return an error message & 400 status code
-        return jsonify({"error": "User already exists"}), 400
-    #   Add new user to the users dictionary
+        return jsonify({"error": "Username already exists"}), 409
     users[username] = {
-        "username": username,
-        "name": user_data["name"],
-        "age": user_data["age"],
-        "city": user_data["city"]
+        "name": user_data.get("name"),
+        "age": user_data.get("age"),
+        "city": user_data.get("city")
     }
-    #   Return confirmation message with the user data & 201 status code
-    return jsonify({
-        "message": "User added",
-        "user": users[username]
-    }), 201
+    return jsonify({"message": "User added", "user": users[username]})
 
 
 #   Start the Flask development server
