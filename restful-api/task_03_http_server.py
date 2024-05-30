@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-The http.server module in Python’s standard library provides
+The http.server module Python’s standard library provides
 basic classes for implementing web servers. While it’s not typically
 used for production applications, it’s a handy tool for building simple
 web servers and understanding the basics of web programming without
