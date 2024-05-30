@@ -13,75 +13,33 @@ It includes endpoints to:
 #   Importing Flask and necessary functions
 from flask import Flask, jsonify, request
 
-#   Creating the Flask application instance
 app = Flask(__name__)
 
-#   In-memory data store for users
+# In-memory data store
 users = {
-    "jane": {
-        "username": "jane",
-        "name": "Jane",
-        "age": 28,
-        "city": "Los Angeles"
-    },
-    "john": {
-        "username": "john",
-        "name": "John",
-        "age": 30,
-        "city": "New York"
-    }
+    "jane": {"name": "Jane", "age": 28, "city": "Los Angeles"},
+    "john": {"name": "John", "age": 30, "city": "New York"}
 }
-
-#   Route for the root URL, returning a welcome message
 
 
 @app.route('/')
 def home():
-    #   Return a welcome message
     return "Welcome to the Flask API!"
-
-#   Route to get all usernames
 
 
 @app.route('/data')
 def get_data():
-    #   Return a list of all usernames
     return jsonify(list(users.keys()))
-
-#   Route to check the API status
 
 
 @app.route('/status')
 def status():
-    #   Return OK status
     return "OK"
-
-#   Route to get API information
-
-
-@app.route('/info')
-def get_info():
-    #   Return API version and description
-    return jsonify({
-        "version": "1.0",
-        "description": "A simple API built with Flask"
-    })
-
-#   Route to get user data for a specific username
 
 
 @app.route('/users/<username>')
 def get_user(username):
-    #   Find user data for the given username
-    user = users.get(username)
-    #   If user exists, return the user data
-    if user:
-        return jsonify(user)
-    #   If user does not exist, return an error message & 404 status code
-    else:
-        return jsonify({"error": "User not found"}), 404
-
-#   Route to add a new user, accepts POST requests only
+    return jsonify(users.get(username))
 
 
 @app.route('/add_user', methods=['POST'])
@@ -100,7 +58,5 @@ def add_user():
     return jsonify({"message": "User added", "user": users[username]})
 
 
-#   Start the Flask development server
 if __name__ == "__main__":
-    #   Run the application
     app.run()
