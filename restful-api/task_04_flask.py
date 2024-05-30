@@ -104,6 +104,12 @@ def add_user():
     # Return confirmation message with the user data & 201 status code
     return jsonify({"message": "User added", "user": users[username]}), 201
 
+# Route for undefined endpoints
+@app.route("/<path:path>")
+def undefined_endpoint(path):
+    # Return a JSON response with a 404 status code and an error message
+    return jsonify({"error": "Endpoint not found"}), 404
+
 
 # Start the Flask development server
 if __name__ == "__main__":
