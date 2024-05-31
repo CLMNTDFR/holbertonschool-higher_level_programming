@@ -7,9 +7,10 @@ from flask_jwt_extended import (
     get_jwt_identity,
 )
 from werkzeug.security import generate_password_hash, check_password_hash
+import os
 
 app = Flask(__name__)
-app.config["SECRET_KEY"] = "your_secret_key"
+app.config["SECRET_KEY"] = os.getenv("SECRET_KEY", "your_secret_key")
 auth = HTTPBasicAuth()
 jwt = JWTManager(app)
 
@@ -59,7 +60,7 @@ def handle_needs_fresh_token_error(err):
 def verify_password(username, password):
     if username in users and check_password_hash(users[username]["password"], password):
         return username
-    return None
+    return False
 
 
 # Basic Auth protected route
