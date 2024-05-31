@@ -15,13 +15,15 @@ class FlaskTestCase(unittest.TestCase):
 
     # Test valid basic authentication to basic-protected route
     def test_valid_basic_auth(self):
-        response = self.app.get('/basic-protected', headers={"Authorization": "Basic dXNlcjE6cGFzc3dvcmQ="})
+        valid_credentials = "Basic dXNlcjE6cGFzc3dvcmQ="  # base64 for 'user1:password'
+        response = self.app.get('/basic-protected', headers={"Authorization": valid_credentials})
         self.assertEqual(response.status_code, 200)
         self.assertIn(b"Basic Auth: Access Granted", response.data)
 
     # Test invalid basic authentication to basic-protected route
     def test_invalid_basic_auth(self):
-        response = self.app.get('/basic-protected', headers={"Authorization": "Basic dXNlcjE6cGFzc3dvcmR="})
+        invalid_credentials = "Basic dXNlcjE6aW52YWxpZA=="  # base64 for 'user1:invalid'
+        response = self.app.get('/basic-protected', headers={"Authorization": invalid_credentials})
         self.assertEqual(response.status_code, 401)
 
     # Test login route
