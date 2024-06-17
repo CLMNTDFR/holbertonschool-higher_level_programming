@@ -59,6 +59,86 @@ mysql> quit
 Bye
 ```
 
+## Using MySQL with Docker
+
+### 1. Downloading the MySQL Image
+
+1. **Download the MySQL image from Docker Hub**:
+
+   ```
+   docker pull mysql:latest
+   ```
+2. Verifying Docker Images
+Verify that the image has been downloaded:
+
+```
+docker images
+```
+3. Running a MySQL Container
+Start a MySQL container:
+
+```
+docker run --name some-mysql -e MYSQL_ROOT_PASSWORD=root -d mysql:latest
+```
+4. Verify the Container is Running
+Check the running containers:
+
+```
+docker ps
+```
+5. Accessing the MySQL Container
+Access the MySQL container:
+
+```
+docker exec -it some-mysql bash
+```
+Check MySQL status within the container (if needed):
+
+```
+mysqladmin -uroot -p status
+```
+Log into MySQL:
+
+```
+mysql -uroot -p
+Enter the password (root in this case).
+```
+
+6. Running SQL Scripts
+Exit MySQL prompt:
+
+```
+quit
+```
+Copy your SQL script into the container:
+
+```
+docker cp 0-list_databases.sql some-mysql:/0-list_databases.
+```
+Run the SQL script inside the container:
+
+```
+docker exec -it some-mysql bash
+```
+```
+mysql -uroot -p < /0-list_databases.sql
+```
+Enter the password (root in this case).
+
+7. Viewing the Databases
+Log back into MySQL to view the databases:
+
+```
+mysql -uroot -p
+```
+Enter the password (root in this case).
+
+Show the databases:
+
+```
+SHOW DATABASES;
+```
+
 ## Tasks:
 
 | File                   | Description                                          |
