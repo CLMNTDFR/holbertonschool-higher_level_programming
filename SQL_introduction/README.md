@@ -68,25 +68,25 @@ Bye
    ```
    docker pull mysql:latest
    ```
-2. Verifying Docker Images
+2. **Verifying Docker Images**:<br>
 Verify that the image has been downloaded:
 
 ```
 docker images
 ```
-3. Running a MySQL Container
+3. **Running a MySQL Container**:<br>
 Start a MySQL container:
 
 ```
 docker run --name some-mysql -e MYSQL_ROOT_PASSWORD=root -d mysql:latest
 ```
-4. Verify the Container is Running
+4. **Verify the Container is Running**:<br>
 Check the running containers:
 
 ```
 docker ps
 ```
-5. Accessing the MySQL Container
+5. **Accessing the MySQL Container**:<br>
 Access the MySQL container:
 
 ```
@@ -104,7 +104,7 @@ mysql -uroot -p
 Enter the password (root in this case).
 ```
 
-6. Running SQL Scripts
+6. **Running SQL Scripts**:<br>
 Exit MySQL prompt:
 
 ```
@@ -125,7 +125,7 @@ mysql -uroot -p < /0-list_databases.sql
 ```
 Enter the password (root in this case).
 
-7. Viewing the Databases
+7. **Viewing the Databases**:<br>
 Log back into MySQL to view the databases:
 
 ```
@@ -138,6 +138,29 @@ Show the databases:
 ```
 SHOW DATABASES;
 ```
+## DATA-Persitence with Docker-Volume 
+1. **Create Docker Volume:**
+   - Use `docker volume create <volume_name>` to create a new Docker volume.
+     Example: `docker volume create mysql_data`
+
+2. **Run MySQL Container with Volume Mount:**
+   - Start a MySQL container with the `-v` or `--volume` option to mount the volume.
+     Example:
+     ```bash
+     docker run -d \
+       --name mysql-container \
+       -e MYSQL_ROOT_PASSWORD=my-secret-pw \
+       -v mysql_data:/var/lib/mysql \
+       mysql:latest
+     ```
+
+3. **Verify Volume Mounting:**
+   - Use `docker inspect <container_id_or_name>` to check volume mounting details.
+     Example: `docker inspect mysql-container`
+
+4. **Conclusion:**
+   - After running the container and verifying the volume mount, the container is linked to the Docker volume `mysql_data`.
+
 
 ## Tasks:
 
