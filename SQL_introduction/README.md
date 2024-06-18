@@ -158,7 +158,7 @@ SHOW DATABASES;
    - Use `docker inspect <container_id_or_name>` to check volume mounting details.
      Example: `docker inspect mysql-container`
 
-4. **Conclusion:**
+4. **Conclusion:***
    - After running the container and verifying the volume mount, the container is linked to the Docker volume `mysql_data`.
 
 
