@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+  db:
+    image: mysql:8.0
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root  # Remplacez par votre mot de passe root MySQL
+      MYSQL_DATABASE: hbtn_0e_0_usa  # Nom de votre base de données
+      MYSQL_USER: root  # Nom d'utilisateur MySQL
+      MYSQL_PASSWORD: db_password  # Mot de passe MySQL
+    ports:
+      - "3306:3306"  # Port pour MySQL Server
+    volumes:
+      - db_data:/var/lib/mysql
+
+  app:
+    build:
+      context: .
+    restart: always
+    depends_on:
+      - db
+    volumes:
+      - .:/app
+    environment:
+      MYSQL_HOST: db  # Nom du service MySQL dans le réseau Docker
+      MYSQL_USER: root  # Nom d'utilisateur MySQL
+      MYSQL_PASSWORD: root  # Mot de passe MySQL
+
+volumes:
+  db_data:
