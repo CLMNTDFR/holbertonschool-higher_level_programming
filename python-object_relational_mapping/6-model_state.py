@@ -1,10 +1,10 @@
 #!/usr/bin/python3
-"""Nameless module to suck data out from the database
+"""Start link class to table in database 
 """
 import sys
 from model_state import Base, State
+
 from sqlalchemy import create_engine
-from sqlalchemy.orm import sessionmaker
 
 if __name__ == "__main__":
     engine = create_engine(
@@ -13,9 +13,4 @@ if __name__ == "__main__":
         ),
         pool_pre_ping=True,
     )
-    Session = sessionmaker(bind=engine)
-    session = Session()
-
-    rows = session.query(State).all()
-    for row in rows:
-        print("{0}: {1}".format(row.id, row.name))
+    Base.metadata.create_all(engine)

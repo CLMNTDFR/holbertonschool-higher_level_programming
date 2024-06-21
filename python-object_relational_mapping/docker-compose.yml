@@ -8,7 +8,7 @@ services:
       MYSQL_ROOT_PASSWORD: root  # Remplacez par votre mot de passe root MySQL
       MYSQL_DATABASE: hbtn_0e_0_usa  # Nom de votre base de données
       MYSQL_USER: root  # Nom d'utilisateur MySQL
-      MYSQL_PASSWORD: db_password  # Mot de passe MySQL
+      MYSQL_PASSWORD: root  # Mot de passe MySQL-63
     ports:
       - "3306:3306"  # Port pour MySQL Server
     volumes:
